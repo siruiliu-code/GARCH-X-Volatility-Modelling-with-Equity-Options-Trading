@@ -21,8 +21,10 @@ def adf_test(series: pd.Series) -> float:
 
     if result[1] > 0.05:
         print("Non-stationary: Consider differencing or other transformations")
+        return result[1]
     else:
         print("Stationary: No differencing required")
+        return result[1]
         
 def goldfeld_quandt_test(series_x: pd.Series, series_y: pd.Series, split=None) -> dict:
     """
