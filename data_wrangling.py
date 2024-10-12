@@ -16,14 +16,14 @@ def adf_test(series: pd.Series) -> float:
     Perform Augmented Dickey-Fuller test.
     """
     result = adfuller(series)
-    print(f'ADF Statistic: {result[0]}')
-    print(f'p-value: {result[1]}')
+    # print(f'ADF Statistic: {result[0]}')
+    # print(f'p-value: {result[1]}')
 
     if result[1] > 0.05:
-        print("Non-stationary: Consider differencing or other transformations")
+        # print("Non-stationary: Consider differencing or other transformations")
         return result[1]
     else:
-        print("Stationary: No differencing required")
+        # print("Stationary: No differencing required")
         return result[1]
         
 def goldfeld_quandt_test(series_x: pd.Series, series_y: pd.Series, split=None) -> dict:
